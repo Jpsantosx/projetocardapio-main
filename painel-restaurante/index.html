@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#192a23">
+    <meta name="description" content="Informações e disponibilidade demonstrativa da La Bella Trattoria.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>La Bella Trattoria | Painel do restaurante</title>
+    <link rel="icon" href="../assets/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../transitions.css?v=20261006-1">
+</head>
+<body>
+    <header class="panel-header">
+        <a class="brand" href="../cardapio/">
+            <img src="../assets/logo.png" alt="">
+            <span>La Bella Trattoria</span>
+        </a>
+        <nav class="panel-nav" aria-label="Navegação do painel">
+            <a href="#orders-title">Pedidos</a>
+            <a href="#reservations-title">Reservas</a>
+            <a href="#profile-title">Restaurante</a>
+        </nav>
+        <a class="menu-link" href="../cardapio/">Voltar ao cardápio</a>
+    </header>
+
+    <main class="panel-main">
+        <div class="panel-title">
+            <div>
+                <p class="eyebrow">Área demonstrativa</p>
+                <h1>Painel do restaurante</h1>
+                <p>Informações do estabelecimento e capacidade de reservas para a demonstração.</p>
+            </div>
+        </div>
+
+        <aside class="local-warning" role="note">
+            <strong>Somente neste navegador.</strong>
+            <span>Este painel não tem login nem servidor. Pedidos e reservas são exemplos salvos localmente no mesmo navegador e endereço do cardápio. Não use dados reais.</span>
+        </aside>
+
+        <section class="panel-section orders-section" aria-labelledby="orders-title">
+            <div class="section-heading orders-heading">
+                <div>
+                    <h2 id="orders-title">Pedidos</h2>
+                    <p>Consulte os itens e atualize a etapa de cada pedido demonstrativo.</p>
+                </div>
+                <button id="refresh-orders" class="secondary-button" type="button">Atualizar pedidos</button>
+            </div>
+            <div class="order-summary" aria-label="Resumo dos pedidos">
+                <article class="summary-item">
+                    <span>Aguardando envio</span>
+                    <strong id="orders-count-received">0</strong>
+                </article>
+                <article class="summary-item">
+                    <span>Enviados</span>
+                    <strong id="orders-count-sent">0</strong>
+                </article>
+                <article class="summary-item">
+                    <span>Em produção</span>
+                    <strong id="orders-count-preparing">0</strong>
+                </article>
+                <article class="summary-item">
+                    <span>Concluídos</span>
+                    <strong id="orders-count-completed">0</strong>
+                </article>
+            </div>
+            <div class="order-toolbar">
+                <div id="order-filters" class="order-filters" role="group" aria-label="Filtrar pedidos">
+                    <button type="button" data-order-filter="all" aria-pressed="true">Todos</button>
+                    <button type="button" data-order-filter="received" aria-pressed="false">Aguardando envio</button>
+                    <button type="button" data-order-filter="sent" aria-pressed="false">Enviados</button>
+                    <button type="button" data-order-filter="preparing" aria-pressed="false">Em produção</button>
+                    <button type="button" data-order-filter="completed" aria-pressed="false">Concluídos</button>
+                </div>
+                <label class="order-search-label">Buscar código
+                    <input id="order-search" type="search" maxlength="6" autocomplete="off" placeholder="Ex.: A2BC34">
+                </label>
+            </div>
+            <div id="orders-list" class="orders-list" aria-live="polite"></div>
+        </section>
+
+        <section class="panel-section" aria-labelledby="profile-title">
+            <div class="section-heading">
+                <div>
+                    <h2 id="profile-title">Informações do restaurante</h2>
+                    <p>Edite os dados ilustrativos exibidos neste painel.</p>
+                </div>
+                <span class="demo-tag">Demonstração</span>
+            </div>
+            <div id="restaurant-profile" class="profile-grid" aria-live="polite"></div>
+            <details class="editor-disclosure">
+                <summary>Editar informações e disponibilidade</summary>
+                <form id="restaurant-profile-form" class="profile-form">
+                    <label>Nome do restaurante
+                        <input name="name" maxlength="70" required>
+                    </label>
+                    <label>Endereço
+                        <textarea name="address" rows="2" maxlength="180" required></textarea>
+                    </label>
+                    <label>Horário de funcionamento
+                        <input name="hours" maxlength="120" required>
+                    </label>
+                    <label>Formas de pagamento
+                        <input name="payments" maxlength="120" required>
+                    </label>
+                    <label>Entrega
+                        <input name="delivery" maxlength="160" required>
+                    </label>
+                    <label>Retirada
+                        <input name="pickup" maxlength="120" required>
+                    </label>
+                    <label>Contato demonstrativo
+                        <input name="contact" maxlength="100" placeholder="Ex.: @restaurante ou telefone fictício">
+                    </label>
+                    <fieldset class="weekday-field">
+                        <legend>Dias disponíveis para reservas</legend>
+                        <p>As reservas usam os dias selecionados e as faixas de horário abaixo. O horário de funcionamento é apenas informativo.</p>
+                        <div class="weekday-grid">
+                            <label><input type="checkbox" name="openDays" value="1"> Segunda</label>
+                            <label><input type="checkbox" name="openDays" value="2"> Terça</label>
+                            <label><input type="checkbox" name="openDays" value="3"> Quarta</label>
+                            <label><input type="checkbox" name="openDays" value="4"> Quinta</label>
+                            <label><input type="checkbox" name="openDays" value="5"> Sexta</label>
+                            <label><input type="checkbox" name="openDays" value="6"> Sábado</label>
+                            <label><input type="checkbox" name="openDays" value="0"> Domingo</label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="capacity-field">
+                        <legend>Lugares por horário</legend>
+                        <p>Informe a capacidade total por data e horário. Reduzir a capacidade não cancela reservas existentes.</p>
+                        <div id="capacity-fields" class="capacity-grid"></div>
+                    </fieldset>
+                    <div class="form-actions">
+                        <button class="primary-button" type="submit">Salvar informações</button>
+                        <button id="reset-profile" class="secondary-button" type="button">Restaurar exemplos</button>
+                    </div>
+                    <p id="profile-feedback" class="feedback" role="status" aria-live="polite"></p>
+                </form>
+            </details>
+        </section>
+
+        <section class="panel-section" aria-labelledby="reservations-title">
+            <div class="section-heading">
+                <div>
+                    <h2 id="reservations-title">Reservas da demonstração</h2>
+                    <p>Consulte os códigos e libere lugares cancelando uma reserva de teste.</p>
+                </div>
+                <button id="refresh-reservations" class="secondary-button" type="button">Atualizar</button>
+            </div>
+            <div id="reservations-list" class="reservation-list" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <footer class="panel-footer">
+        <a href="../cardapio/">La Bella Trattoria | Cardápio</a>
+        <span>Dados fictícios, salvos somente neste navegador.</span>
+    </footer>
+
+    <script src="panel.js"></script>
+</body>
+</html>

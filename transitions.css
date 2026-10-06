@@ -1,0 +1,32 @@
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root) {
+    animation: page-leave 180ms ease-in both;
+}
+
+::view-transition-new(root) {
+    animation: page-arrive 320ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+@keyframes page-leave {
+    to {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes page-arrive {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation-duration: 1ms;
+    }
+}

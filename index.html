@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#192a23">
+    <meta name="description" content="Acesse o cardápio demonstrativo ou as informações da La Bella Trattoria.">
+    <title>La Bella Trattoria</title>
+    <link rel="icon" href="assets/logo.png">
+    <link rel="stylesheet" href="transitions.css?v=20261006-1">
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: "Segoe UI", sans-serif;
+            color: #20352b;
+            background: #f4f7f4;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+        }
+
+        main {
+            width: min(100%, 700px);
+            padding: clamp(26px, 7vw, 56px);
+            border: 1px solid #d8e0da;
+            border-radius: 16px;
+            background: #fff;
+            box-shadow: 0 20px 50px rgb(31 54 41 / 7%);
+        }
+
+        img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        h1 {
+            margin: 22px 0 8px;
+            font-size: clamp(2rem, 7vw, 3.2rem);
+            letter-spacing: -0.04em;
+        }
+
+        p { color: #5d6d63; }
+
+        nav {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        nav a {
+            display: flex;
+            min-height: 62px;
+            align-items: center;
+            padding: 14px 18px;
+            border: 1px solid #315b43;
+            border-radius: 10px;
+            color: #315b43;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        nav a:first-child {
+            background: #315b43;
+            color: #fff;
+        }
+
+        nav a:hover { transform: translateY(-1px); }
+
+        a:focus-visible {
+            outline: 3px solid #52795e;
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 520px) {
+            nav { grid-template-columns: 1fr; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <img src="assets/logo.png" alt="">
+        <h1>La Bella Trattoria</h1>
+        <p>Escolha uma área para continuar.</p>
+        <nav aria-label="Áreas do site">
+            <a href="cardapio/">Ver cardápio</a>
+            <a href="painel-restaurante/">Informações do restaurante</a>
+        </nav>
+    </main>
+</body>
+</html>

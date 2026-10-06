@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-whatsapp-number="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Bella Trattoria | Cardápio</title>
+    <meta name="description" content="Veja entradas, massas, pizzas, bebidas e sobremesas da La Bella Trattoria. Pesquise pratos, confira ingredientes e monte seu pedido online.">
+    <meta name="theme-color" content="#22372e">
+    <link rel="canonical" href="https://projetocardapio-phi.vercel.app/cardapio/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="La Bella Trattoria">
+    <meta property="og:title" content="La Bella Trattoria | Cardápio">
+    <meta property="og:description" content="Explore entradas, massas, pizzas, bebidas e sobremesas. Monte seu pedido online.">
+    <meta property="og:url" content="https://projetocardapio-phi.vercel.app/cardapio/">
+    <meta property="og:image" content="https://projetocardapio-phi.vercel.app/assets/fundo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="La Bella Trattoria | Cardápio">
+    <meta name="twitter:description" content="Explore entradas, massas, pizzas, bebidas e sobremesas. Monte seu pedido online.">
+    <meta name="twitter:image" content="https://projetocardapio-phi.vercel.app/assets/fundo.png">
+    <link rel="icon" href="../assets/logo.png">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "La Bella Trattoria",
+            "url": "https://projetocardapio-phi.vercel.app/cardapio/",
+            "description": "Cardápio demonstrativo com pratos, ingredientes e montagem de pedido."
+        }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ 
+    <link rel="stylesheet" href="style.css?v=20261006-2">
+    <link rel="stylesheet" href="../transitions.css?v=20261006-1">
+</head>
+<body>
+    <a class="skip-link" href="#cardapio">Pular para o cardápio</a>
+    <header id="header">
+        <a href="#Home" class="logo-link" aria-label="La Bella Trattoria - Início">
+            <figure><img src="../assets/logo.png" alt="Logo La Bella Trattoria"></figure>
+            <span>La Bella Trattoria</span>
+        </a>
+        <nav class="menu-nav" aria-label="Navegação principal">
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Entradas">Entradas</a></li>
+                <li><a href="#Massas">Massas</a></li>
+                <li><a href="#Pizzas">Pizzas</a></li>
+                <li><a href="#Drinks">Drinks</a></li>
+                <li><a href="#Sobremesas">Sobremesas</a></li>
+            </ul>
+        </nav>
+        <label class="language-control" for="language-select">
+            <span>Idioma</span>
+            <select id="language-select" name="language">
+                <option value="pt-BR">Português</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="it">Italiano</option>
+                <option value="es">Español</option>
+                <option value="zh-CN">中文</option>
+                <option value="ja">日本語</option>
+                <option value="de">Deutsch</option>
+            </select>
+        </label>
+        <button id="open-cart" class="cart-trigger" type="button" aria-haspopup="dialog" aria-controls="order-dialog" aria-label="Abrir pedido, 0 itens">
+            <span>Meu pedido</span>
+            <span id="cart-count" class="cart-count" aria-hidden="true">0</span>
+        </button>
+    </header>
+
+    
+    <main id="cardapio">
+        <section class="linha_home" id="Home">
+            <div class="container_home">
+                <p class="hero-kicker">La Bella Trattoria · cucina italiana</p>
+                <h1>Uma mesa posta para viajar à Itália.</h1>
+                <p class="sottotitolo">Massas, pizzas e receitas clássicas preparadas para aproveitar sem pressa.</p>
+                <a class="hero-link" href="#Entradas">Ver o cardápio <span aria-hidden="true">↘</span></a>
+            </div>
+            <figure class="hero-visual">
+                <img src="../assets/fundo.png" alt="Salão acolhedor da La Bella Trattoria" loading="eager" fetchpriority="high" decoding="async">
+                <figcaption>La Bella Trattoria</figcaption>
+            </figure>
+        </section>
+
+        <aside class="demo-data-banner" aria-label="Aviso sobre dados ilustrativos">
+            <strong>Cardápio de demonstração</strong>
+            <p>Preços, horários, endereço, formas de pagamento, tamanhos e entrega abaixo são exemplos. Confirme os dados reais com o restaurante antes de visitar ou pedir.</p>
+        </aside>
+
+        <section class="menu-tools" aria-label="Buscar pratos">
+            <div class="menu-tools-inner">
+                <div class="menu-tools-heading">
+                    <p class="section-kicker">Feito para escolher bem</p>
+                    <h2>O que combina com hoje?</h2>
+                    <p>Busque um prato, ingrediente ou organize pelo preço.</p>
+                </div>
+                <div class="search-field">
+                    <label class="visually-hidden" for="menu-search">Buscar pratos e ingredientes</label>
+                    <span class="search-icon" aria-hidden="true">⌕</span>
+                    <input id="menu-search" type="search" placeholder="Ex.: carbonara, tomate…" autocomplete="off">
+                    <button id="clear-search" class="clear-search" type="button" aria-label="Limpar busca" hidden>Limpar</button>
+                </div>
+                <div class="menu-actions">
+                    <button id="favorites-filter" class="favorites-filter" type="button" aria-pressed="false">
+                        <span aria-hidden="true">♡</span>
+                        Favoritos
+                        <span id="favorites-count" class="favorites-count">0</span>
+                    </button>
+                    <label class="dietary-field" for="dietary-filter">
+                        <span>Opções</span>
+                        <select id="dietary-filter">
+                            <option value="all">Todos os pratos</option>
+                            <option value="no-meat-listed">Sem carne na descrição</option>
+                        </select>
+                    </label>
+                    <label class="sort-field" for="sort-menu">
+                        <span>Ordenar</span>
+                        <select id="sort-menu">
+                            <option value="default">Ordem do cardápio</option>
+                            <option value="price-asc">Menor preço</option>
+                            <option value="price-desc">Maior preço</option>
+                        </select>
+                    </label>
+                </div>
+                <p id="search-status" class="search-status" aria-live="polite">30 pratos no cardápio.</p>
+                <p id="empty-state" class="empty-state" role="status" hidden>Nenhum prato encontrado. Tente outro nome ou ingrediente.</p>
+                <p id="share-feedback" class="share-feedback" role="status" aria-live="polite"></p>
+            </div>
+            <aside class="allergen-note" aria-label="Aviso sobre alergênicos">
+                <strong>Tem alguma restrição alimentar?</strong>
+                <p>Consulte nossa equipe sobre os ingredientes e a possibilidade de contaminação cruzada antes de fazer seu pedido.</p>
+            </aside>
+        </section>
+
+    <section class="menu-section section-entradas" id="Entradas">
+        <div class="container">
+            <div class="titulo"><h2>Entradas</h2><p>Pequenos pratos para começar a refeição.</p></div>
+            <div class="grid-cards">
+                <div class="card">
+                    <figure><img src="../assets/entrada1.jpg" alt="Bruschetta al Pomodoro"></figure>
+                    <div class="card-content">
+                        <span class="badge">Clássico</span>
+                        <h2>Bruschetta al Pomodoro</h2>
+                        <p class="descricao">Pão rústico tostado, tomate fresco, manjericão e azeite</p>
+                        <p class="preco">R$ 26</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/entrada2.jpg" alt="Caprese di Bufala"></figure>
+                    <div class="card-content">
+                        <h2>Caprese di Bufala</h2>
+                        <p class="descricao">Mozzarella de búfala, tomate e manjericão fresquíssimos</p>
+                        <p class="preco">R$ 38</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/entrada3.jpg" alt="Carpaccio di Manzo"></figure>
+                    <div class="card-content">
+                        <h2>Carpaccio di Manzo</h2>
+                        <p class="descricao">Finas lâminas de carne com rúcula, parmesão e alcaparras</p>
+                        <p class="preco">R$ 44</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/entrada4.jpg" alt="Arancini Siciliani"></figure>
+                    <div class="card-content">
+                        <span class="badge">Típico</span>
+                        <h2>Arancini Siciliani</h2>
+                        <p class="descricao">Bolinhos de risoto recheados com mozzarella e ragù</p>
+                        <p class="preco">R$ 34</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/entrada5.jpg" alt="Melanzane alla Parmigiana"></figure>
+                    <div class="card-content">
+                        <h2>Melanzane alla Parmigiana</h2>
+                        <p class="descricao">Berinjela gratinada com molho de tomate e parmesão</p>
+                        <p class="preco">R$ 39</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/entrada6.jpg" alt="Frittura di Calamari"></figure>
+                    <div class="card-content">
+                        <h2>Frittura di Calamari</h2>
+                        <p class="descricao">Lulas frescas empanadas e fritas, servidas com limão</p>
+                        <p class="preco">R$ 49</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="menu-section section-massas" id="Massas">
+        <div class="container">
+            <div class="titulo"><h2>Massas</h2><p>Receitas italianas para saborear sem pressa.</p></div>
+            <div class="grid-cards">
+                <div class="card">
+                    <figure><img src="../assets/prato1.jpg" alt="Tagliatelle alla Bolognese"></figure>
+                    <div class="card-content">
+                        <span class="badge">Chef</span>
+                        <h2>Tagliatelle alla Bolognese</h2>
+                        <p class="descricao">Massa artesanal com molho bolonhesa cozido lentamente</p>
+                        <p class="preco">R$ 62</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/carbonara.jpg" alt="Spaghetti alla Carbonara"></figure>
+                    <div class="card-content">
+                        <h2>Spaghetti alla Carbonara</h2>
+                        <p class="descricao">Receita original com guanciale, pecorino e gema de ovo</p>
+                        <p class="preco">R$ 58</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/lasanha.jpg" alt="Lasagna alla Napoletana"></figure>
+                    <div class="card-content">
+                        <h2>Lasagna alla Napoletana</h2>
+                        <p class="descricao">Camadas de massa, ragù, mozzarella e ricota artesanal</p>
+                        <p class="preco">R$ 68</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/ravioli.jpg" alt="Ravioli di Ricotta e Spinaci"></figure>
+                    <div class="card-content">
+                        <h2>Ravioli di Ricotta e Spinaci</h2>
+                        <p class="descricao">Massa recheada ao molho de manteiga e sálvia</p>
+                        <p class="preco">R$ 64</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/nhoc.jpg" alt="Gnocchi alla Sorrentina"></figure>
+                    <div class="card-content">
+                        <h2>Gnocchi alla Sorrentina</h2>
+                        <p class="descricao">Nhoque de batata gratinado com molho e mozzarella</p>
+                        <p class="preco">R$ 59</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/frutti.jpg" alt="Fettuccine ai Frutti di Mare"></figure>
+                    <div class="card-content">
+                        <span class="badge">Premium</span>
+                        <h2>Fettuccine ai Frutti di Mare</h2>
+                        <p class="descricao">Massa fresca com frutos do mar salteados ao vinho branco</p>
+                        <p class="preco">R$ 72</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="menu-section section-pizzas" id="Pizzas">
+        <div class="container">
+            <div class="titulo"><h2>Pizzas</h2><p>Clássicos preparados para compartilhar.</p></div>
+            <div class="grid-cards">
+                <div class="card">
+                    <figure><img src="../assets/pizza1.jpg" alt="Margherita"></figure>
+                    <div class="card-content">
+                        <span class="badge">Top</span>
+                        <h2>Margherita</h2>
+                        <p class="descricao">Molho San Marzano, mozzarella fior di latte e manjericão</p>
+                        <p class="preco">R$ 49</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/pizza2.jpg" alt="Marinara"></figure>
+                    <div class="card-content">
+                        <h2>Marinara</h2>
+                        <p class="descricao">Molho de tomate, alho, orégano e azeite extravirgem</p>
+                        <p class="preco">R$ 42</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/pizza3.jpg" alt="Diavola"></figure>
+                    <div class="card-content">
+                        <h2>Diavola</h2>
+                        <p class="descricao">Salame picante, mozzarella e molho de tomate defumado</p>
+                        <p class="preco">R$ 56</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/pizza4.jpg" alt="Quattro Formaggi"></figure>
+                    <div class="card-content">
+                        <h2>Quattro Formaggi</h2>
+                        <p class="descricao">Gorgonzola, parmesão, mozzarella e fontina</p>
+                        <p class="preco">R$ 62</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/pizza5.jpg" alt="Prosciutto e Rucola"></figure>
+                    <div class="card-content">
+                        <h2>Prosciutto e Rucola</h2>
+                        <p class="descricao">Presunto de Parma, rúcula fresca e lascas de parmesão</p>
+                        <p class="preco">R$ 68</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/pizza6.jpg" alt="Capricciosa"></figure>
+                    <div class="card-content">
+                        <h2>Capricciosa</h2>
+                        <p class="descricao">Cogumelos, alcachofra, azeitonas e presunto cozido</p>
+                        <p class="preco">R$ 66</p>
+                    </div>
+                </div>
+            </div>
+            <aside class="menu-size-note">
+                <h3>Tamanhos de pizza demonstrativos</h3>
+                <p>Individual (25 cm), regular (30 cm) e família (35 cm). Os preços no personalizador são simulações calculadas a partir do preço atual do cardápio, não valores oficiais.</p>
+            </aside>
+        </div>
+    </section>
+
+
+    <section class="menu-section section-drinks" id="Drinks">
+        <div class="container">
+            <div class="titulo"><h2>Drinks</h2><p>Coquetéis para acompanhar a refeição.</p></div>
+            <div class="grid-cards">
+                <div class="card">
+                    <figure><img src="../assets/bebida1.jpg" alt="Negroni"></figure>
+                    <div class="card-content">
+                        <h2>Negroni</h2>
+                        <p class="descricao">Gin, vermute tinto e Campari. Um clássico italiano.</p>
+                        <p class="preco">R$ 34</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/bebida2.jpg" alt="Aperol Spritz"></figure>
+                    <div class="card-content">
+                        <h2>Aperol Spritz</h2>
+                        <p class="descricao">Aperol, prosecco e água com gás. Refrescante e cítrico.</p>
+                        <p class="preco">R$ 32</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/bebida3.jpg" alt="Bellini"></figure>
+                    <div class="card-content">
+                        <h2>Bellini</h2>
+                        <p class="descricao">Espumante com purê de pêssego fresco, servido gelado.</p>
+                        <p class="preco">R$ 36</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/bebida4.jpg" alt="Limoncello Tonic"></figure>
+                    <div class="card-content">
+                        <h2>Limoncello Tonic</h2>
+                        <p class="descricao">Licor de limão siciliano com água tônica e hortelã</p>
+                        <p class="preco">R$ 29</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/bebidas5.jpg" alt="Americano"></figure>
+                    <div class="card-content">
+                        <h2>Americano</h2>
+                        <p class="descricao">Vermute tinto, Campari e soda. Amargo na medida certa.</p>
+                        <p class="preco">R$ 31</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/bebida6.jpg" alt="Espresso Martini alla Italiana"></figure>
+                    <div class="card-content">
+                        <span class="badge">Especial</span>
+                        <h2>Espresso Martini</h2>
+                        <p class="descricao">Vodca, café espresso italiano e licor de baunilha</p>
+                        <p class="preco">R$ 38</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="menu-section section-sobremesas" id="Sobremesas">
+        <div class="container">
+            <div class="titulo"><h2>Sobremesas</h2><p>Doces italianos para fechar a refeição.</p></div>
+            <div class="grid-cards">
+                <div class="card">
+                    <figure><img src="../assets/doce1.jpg" alt="Tiramisù Classico"></figure>
+                    <div class="card-content">
+                        <span class="badge">Ícone</span>
+                        <h2>Tiramisù Classico</h2>
+                        <p class="descricao">Camadas de mascarpone, café e cacau. Um clássico italiano.</p>
+                        <p class="preco">R$ 28</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/doce2.jpg" alt="Panna Cotta alla Vaniglia"></figure>
+                    <div class="card-content">
+                        <h2>Panna Cotta alla Vaniglia</h2>
+                        <p class="descricao">Creme cozido com baunilha de Madagascar e calda de frutas</p>
+                        <p class="preco">R$ 26</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/doce3.jpg" alt="Cannoli Siciliani"></figure>
+                    <div class="card-content">
+                        <h2>Cannoli Siciliani</h2>
+                        <p class="descricao">Massa crocante recheada com ricota doce e pistache</p>
+                        <p class="preco">R$ 32 <small>(2 un.)</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/doce4.jpg" alt="Affogato al Caffè"></figure>
+                    <div class="card-content">
+                        <h2>Affogato al Caffè</h2>
+                        <p class="descricao">Gelato de creme "afogado" em espresso quente</p>
+                        <p class="preco">R$ 22</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/doce5.jpg" alt="Torta Caprese"></figure>
+                    <div class="card-content">
+                        <h2>Torta Caprese</h2>
+                        <p class="descricao">Bolo de chocolate e amêndoas, macio e intenso</p>
+                        <p class="preco">R$ 30</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure><img src="../assets/doce6.jpg" alt="Gelato Artigianale"></figure>
+                    <div class="card-content">
+                        <h2>Gelato Artigianale</h2>
+                        <p class="descricao">Dois sabores do nosso gelato feito diariamente</p>
+                        <p class="preco">R$ 24</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo-center" id="Demonstracoes" aria-labelledby="demo-center-title">
+        <div class="demo-center-inner">
+            <div class="demo-center-heading">
+                <h2 id="demo-center-title">Pedidos e recursos em demonstração</h2>
+                <p>Essas funções guardam informações somente neste navegador. Nada é enviado ao restaurante nem sincronizado com outro aparelho.</p>
+            </div>
+            <p class="demo-local-warning" role="note">
+                Protótipo local sem servidor, login ou proteção de dados. Use apenas informações fictícias. Não faça pedidos, reservas ou avaliações reais por estes formulários.
+            </p>
+            <p id="demo-storage-notice" class="demo-feedback" role="status" aria-live="polite"></p>
+
+            <div class="demo-feature-grid">
+                <section class="demo-feature-panel" aria-labelledby="order-tracker-title">
+                    <h3 id="order-tracker-title">Acompanhar pedido de teste</h3>
+                    <p>Adicione pratos ao pedido primeiro. Registre apenas um resumo demonstrativo, sem nome, contato ou endereço.</p>
+                    <button id="create-demo-order" class="demo-primary-button" type="button">Registrar pedido de teste</button>
+                    <form id="track-order-form" class="demo-inline-form">
+                        <label for="tracking-order-id">Código do pedido</label>
+                        <div class="demo-inline-controls">
+                            <input id="tracking-order-id" name="orderId" minlength="6" maxlength="6" pattern="[A-HJ-NP-Z2-9]{6}" autocomplete="off" autocapitalize="characters" required>
+                            <button type="submit">Acompanhar</button>
+                        </div>
+                    </form>
+                    <div id="order-tracking-result" class="demo-result" role="status" aria-live="polite"></div>
+                </section>
+
+                <section class="demo-feature-panel" aria-labelledby="reservation-title">
+                    <h3 id="reservation-title">Reserva de mesa demonstrativa</h3>
+                    <p>Escolha uma data, um horário disponível e o tamanho do grupo. O código permite consultar os dados salvos neste navegador.</p>
+                    <form id="demo-reservation-form" class="demo-form">
+                        <label>Data
+                            <input name="date" type="date" required>
+                        </label>
+                        <label>Horário
+                            <select name="time" required disabled>
+                                <option value="">Escolha uma data primeiro</option>
+                            </select>
+                        </label>
+                        <label>Pessoas
+                            <input name="guests" type="number" min="1" max="12" value="2" required>
+                        </label>
+                        <button class="demo-primary-button" type="submit">Reservar na demonstração</button>
+                    </form>
+                    <p id="reservation-feedback" class="demo-feedback" role="status" aria-live="polite"></p>
+                    <form id="demo-reservation-lookup" class="demo-inline-form">
+                        <label for="reservation-code">Consultar reserva pelo código</label>
+                        <div class="demo-inline-controls">
+                            <input id="reservation-code" name="reservationCode" minlength="6" maxlength="6" pattern="[A-HJ-NP-Z2-9]{6}" autocomplete="off" autocapitalize="characters" required>
+                            <button type="submit">Consultar</button>
+                        </div>
+                    </form>
+                    <div id="reservation-lookup-result" class="demo-result" role="status" aria-live="polite"></div>
+                </section>
+
+                <section class="demo-feature-panel" aria-labelledby="waitlist-title">
+                    <h3 id="waitlist-title">Lista de espera demonstrativa</h3>
+                    <p>Simule sua posição sem informar nome ou contato. Não envia aviso nem reserva uma mesa.</p>
+                    <form id="demo-waitlist-form" class="demo-form">
+                        <label>Tamanho do grupo
+                            <select name="guests" required>
+                                <option value="1">1 pessoa</option>
+                                <option value="2" selected>2 pessoas</option>
+                                <option value="3">3 pessoas</option>
+                                <option value="4">4 pessoas</option>
+                                <option value="5">5 pessoas</option>
+                                <option value="6">6 pessoas</option>
+                            </select>
+                        </label>
+                        <button class="demo-primary-button" type="submit">Entrar na fila de teste</button>
+                    </form>
+                    <div id="waitlist-feedback" class="demo-result" role="status" aria-live="polite"></div>
+                </section>
+
+                <section class="demo-feature-panel demo-offer-panel" aria-labelledby="demo-offers-title">
+                    <h3 id="demo-offers-title">Oferta e combo de demonstração</h3>
+                    <p id="demo-offer-title" class="demo-offer-title"></p>
+                    <p id="demo-offer-description"></p>
+                    <p id="demo-offer-combo" class="demo-combo-items"></p>
+                    <p id="demo-offer-price" class="demo-combo-price"></p>
+                    <span class="demo-label">Valores e composição são exemplos locais, sem desconto e sem venda.</span>
+                </section>
+
+                <section class="demo-feature-panel" aria-labelledby="demo-reviews-title">
+                    <h3 id="demo-reviews-title">Avaliações da demonstração</h3>
+                    <p>As avaliações ficam pendentes até serem aprovadas no painel local. Não há verificação de compra.</p>
+                    <form id="demo-review-form" class="demo-form">
+                        <label>Nome demonstrativo
+                            <input name="name" maxlength="50" autocomplete="off" required>
+                        </label>
+                        <label>Nota
+                            <select name="rating" required>
+                                <option value="">Selecione</option>
+                                <option value="5">5 de 5</option><option value="4">4 de 5</option>
+                                <option value="3">3 de 5</option><option value="2">2 de 5</option>
+                                <option value="1">1 de 5</option>
+                            </select>
+                        </label>
+                        <label>Comentário fictício
+                            <textarea name="comment" rows="3" maxlength="300" required></textarea>
+                        </label>
+                        <button class="demo-primary-button" type="submit">Enviar para moderação local</button>
+                    </form>
+                    <p id="review-feedback" class="demo-feedback" role="status" aria-live="polite"></p>
+                    <div id="published-demo-reviews" class="demo-review-list" aria-live="polite"></div>
+                </section>
+
+                <section class="demo-feature-panel accessibility-panel" aria-labelledby="accessibility-title">
+                    <h3 id="accessibility-title">Acessibilidade</h3>
+                    <p>Ajustes visuais ficam salvos somente neste navegador.</p>
+                    <div class="accessibility-controls" role="group" aria-label="Tamanho do texto">
+                        <button id="text-smaller" type="button" aria-label="Diminuir tamanho do texto">A-</button>
+                        <span id="text-size-label" aria-live="polite">Texto padrão</span>
+                        <button id="text-larger" type="button" aria-label="Aumentar tamanho do texto">A+</button>
+                    </div>
+                    <label class="accessibility-toggle">
+                        <input id="contrast-toggle" type="checkbox">
+                        <span>Ativar contraste reforçado</span>
+                    </label>
+                    <button id="reset-accessibility" class="demo-secondary-button" type="button">Restaurar padrão</button>
+                </section>
+            </div>
+
+            <div class="demo-admin-launch">
+                <p>Configurações do cardápio e acompanhamento dos pedidos são demonstrações locais, sem autenticação.</p>
+                <div class="demo-admin-actions">
+                    <button id="open-demo-admin" class="demo-secondary-button" type="button" aria-haspopup="dialog" aria-controls="demo-admin-dialog">Editar cardápio de teste</button>
+                    <a class="demo-secondary-button" href="../painel-restaurante/">Abrir painel do restaurante</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-share-section" aria-labelledby="menu-share-title">
+        <div class="qr-share-panel">
+            <div>
+                <h2 id="menu-share-title">Compartilhe o cardápio</h2>
+                <p>Envie o link para alguém ou abra o QR Code do cardápio.</p>
+                <button id="share-menu" class="share-menu-button" type="button">Compartilhar cardápio</button>
+                <a id="menu-link-fallback" class="menu-link-fallback" href="https://projetocardapio-phi.vercel.app/cardapio/" hidden>Copie ou abra este link do cardápio</a>
+            </div>
+            <figure class="menu-qr">
+                <img id="menu-qr-image" data-src="" alt="QR Code para abrir o cardápio online" width="176" height="176" loading="lazy">
+                <figcaption>QR Code do cardápio online</figcaption>
+                <a id="download-menu-qr" class="qr-download" href="#" target="_blank" rel="noopener noreferrer">Abrir QR Code em tamanho grande</a>
+            </figure>
+        </div>
+    </section>
+
+    </main>
+
+    <footer>
+        <div class="col_rodape logo_rodape">
+            <figure><img src="../assets/logo.png" alt="Logo"></figure>
+        </div>
+        <div class="col_rodape">
+            <figure><img src="../assets/localizacao.png" alt="Localização"></figure>
+            <h2><a href="../painel-restaurante/">Informações do restaurante (demonstração)</a></h2>
+        </div>
+        <div class="col_rodape">
+            <h2><a href="#Demonstracoes">Reservas e outros recursos (demonstração)</a></h2>
+        </div>
+        <div class="col_rodape">
+            <figure><img src="../assets/insta.png" alt="Instagram"></figure>
+            <h2><a href="https://www.instagram.com/labellatrattoria38/" target="_blank" rel="noopener noreferrer">@labellatrattoria38</a></h2>
+        </div>
+        <p class="footer-note">Confirme os ingredientes e o risco de contaminação cruzada com a equipe antes de pedir.</p>
+    </footer>
+
+    <a class="back-to-top" href="#Home" aria-label="Voltar ao início" hidden>
+        <span aria-hidden="true">↑</span>
+    </a>
+    <a class="admin-shortcut" href="../painel-restaurante/" aria-label="Acesso temporário ao painel administrativo de demonstração">
+        <span class="admin-shortcut-mark" aria-hidden="true">ADM</span>
+        <span>Painel</span>
+    </a>
+
+    <dialog id="order-dialog" class="order-dialog" aria-labelledby="order-dialog-title">
+        <div class="order-dialog-shell">
+            <div class="order-dialog-header">
+                <div>
+                    <p id="order-dialog-kicker" class="dialog-kicker">La Bella Trattoria</p>
+                    <h2 id="order-dialog-title">Seu pedido</h2>
+                </div>
+                <button id="close-order-dialog" class="dialog-close" type="button" aria-label="Fechar">×</button>
+            </div>
+            <div id="order-dialog-content" class="order-dialog-content"></div>
+            <p id="order-dialog-feedback" class="order-dialog-feedback" role="status" aria-live="polite"></p>
+        </div>
+    </dialog>
+
+    <dialog id="demo-admin-dialog" class="demo-admin-dialog" aria-labelledby="demo-admin-title">
+        <div class="demo-admin-shell">
+            <div class="demo-admin-header">
+                <div>
+                    <p class="demo-label">Sem login. Alterações só neste navegador.</p>
+                    <h2 id="demo-admin-title">Painel de demonstração</h2>
+                </div>
+                <button id="close-demo-admin" class="dialog-close" type="button" aria-label="Fechar painel">×</button>
+            </div>
+            <div class="demo-admin-content">
+                <p class="demo-local-warning">Este painel não é seguro para dados reais. Mudanças no cardápio, alergênicos, pedidos, reservas, ofertas e avaliações não são publicadas.</p>
+                <details class="demo-admin-section">
+                    <summary>Fila de espera de teste</summary>
+                    <div id="demo-admin-waitlist" class="demo-admin-list"></div>
+                </details>
+                <details class="demo-admin-section">
+                    <summary>Editar prato demonstrativo</summary>
+                    <form id="demo-menu-form" class="demo-form">
+                        <label>Prato
+                            <select id="demo-menu-product" name="productId"></select>
+                        </label>
+                        <label>Descrição demonstrativa
+                            <textarea id="demo-menu-description" name="description" rows="2" maxlength="220"></textarea>
+                        </label>
+                        <label>Preço ilustrativo em reais
+                            <input id="demo-menu-price" name="price" type="number" min="0.01" max="9999" step="0.01" required>
+                        </label>
+                        <label>Informações sobre alergênicos (não verificadas)
+                            <textarea id="demo-menu-allergens" name="allergens" rows="2" maxlength="240" placeholder="Digite somente dados fictícios para testar."></textarea>
+                        </label>
+                        <label>Imagem demonstrativa
+                            <input id="demo-menu-image" name="image" type="file" accept=".jpg,.jpeg,.png,.webp" aria-describedby="demo-image-help">
+                        </label>
+                        <p id="demo-image-help" class="demo-form-help">JPG, PNG ou WebP de até 350 KB. O arquivo fica apenas neste navegador.</p>
+                        <label>Porção de exemplo
+                            <input id="demo-menu-portion" name="portion" maxlength="70" placeholder="Ex.: 1 porção (exemplo)">
+                        </label>
+                        <label>Nível de picância demonstrativo
+                            <select id="demo-menu-spice" name="spice">
+                                <option value="none">Sem picância (exemplo)</option>
+                                <option value="mild">Leve (exemplo)</option>
+                                <option value="medium">Média (exemplo)</option>
+                                <option value="hot">Picante (exemplo)</option>
+                                <option value="unknown">A confirmar</option>
+                            </select>
+                        </label>
+                        <label>Opção sem álcool demonstrativa
+                            <select id="demo-menu-nonalcoholic" name="nonAlcoholic">
+                                <option value="not-applicable">Não aplicável (exemplo)</option>
+                                <option value="yes">Sim (exemplo)</option>
+                                <option value="no">Não (exemplo)</option>
+                                <option value="unknown">A confirmar</option>
+                            </select>
+                        </label>
+                        <label>Ingredientes informados (não verificados)
+                            <textarea id="demo-menu-ingredients" name="ingredients" rows="3" maxlength="400" placeholder="Digite ingredientes fictícios para o teste."></textarea>
+                        </label>
+                        <label class="accessibility-toggle">
+                            <input id="demo-menu-available" name="available" type="checkbox">
+                            <span>Disponível na demonstração</span>
+                        </label>
+                        <button class="demo-primary-button" type="submit">Salvar alterações locais</button>
+                    </form>
+                    <p id="demo-menu-feedback" class="demo-feedback" role="status" aria-live="polite"></p>
+                </details>
+                <details class="demo-admin-section">
+                <summary>Oferta e combo fictícios</summary>
+                    <form id="demo-offer-form" class="demo-form">
+                        <label>Título da oferta
+                            <input name="title" maxlength="70" required>
+                        </label>
+                        <label>Descrição
+                            <textarea name="description" rows="2" maxlength="180" required></textarea>
+                        </label>
+                    <label>Itens do combo de teste
+                        <select id="demo-offer-items" name="items" multiple size="5"></select>
+                    </label>
+                    <p class="demo-form-help">O valor é a soma ilustrativa dos preços de cardápio editados acima. Não há desconto nem preço comercial.</p>
+                    <button class="demo-primary-button" type="submit">Salvar oferta local</button>
+                </form>
+                    <p id="demo-offer-feedback" class="demo-feedback" role="status" aria-live="polite"></p>
+                </details>
+                <details class="demo-admin-section">
+                    <summary>Moderar comentários fictícios</summary>
+                    <div id="demo-admin-reviews" class="demo-admin-list"></div>
+                </details>
+                <button id="reset-demo-data" class="demo-danger-button" type="button">Apagar todos os dados demonstrativos</button>
+                <p id="demo-admin-feedback" class="demo-feedback" role="status" aria-live="polite"></p>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="script.js?v=20261006-2"></script>
+    <script src="restaurant-config.js"></script>
+    <script src="order.js"></script>
+    <script src="site-enhancements.js"></script>
+    <script src="demo-features.js"></script>
+    <script src="translations.js"></script>
+</body>
+</html>

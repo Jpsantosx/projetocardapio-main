@@ -1,0 +1,32 @@
+window.restaurantDemoConfig = {
+    publicMenuUrl: new URL('./', window.location.href).href,
+    deliveryFee: 8,
+    deliveryRadiusKm: 5,
+    deliveryMinutes: '45 a 60 minutos',
+    pickupMinutes: '20 a 30 minutos',
+    pizzaSizes: [
+        { id: 'individual', label: 'Individual (25 cm)', multiplier: 0.8 },
+        { id: 'regular', label: 'Regular (30 cm)', multiplier: 1 },
+        { id: 'family', label: 'Família (35 cm)', multiplier: 1.35 },
+    ],
+    noMeatListed: [
+        'Bruschetta al Pomodoro',
+        'Caprese di Bufala',
+        'Melanzane alla Parmigiana',
+        'Ravioli di Ricotta e Spinaci',
+        'Gnocchi alla Sorrentina',
+        'Margherita',
+        'Marinara',
+        'Quattro Formaggi',
+    ],
+    recommendations: {
+        'Bruschetta al Pomodoro': ['Caprese di Bufala', 'Tiramisù Classico'],
+        'Caprese di Bufala': ['Bruschetta al Pomodoro', 'Torta Caprese'],
+        'Tagliatelle alla Bolognese': ['Bruschetta al Pomodoro', 'Tiramisù Classico'],
+        'Spaghetti alla Carbonara': ['Caprese di Bufala', 'Panna Cotta alla Vaniglia'],
+        'Margherita': ['Bruschetta al Pomodoro', 'Gelato Artigianale'],
+        'Diavola': ['Caprese di Bufala', 'Tiramisù Classico'],
+        'Aperol Spritz': ['Bruschetta al Pomodoro', 'Margherita'],
+        'Tiramisù Classico': ['Espresso Martini', 'Affogato al Caffè'],
+    },
+};
